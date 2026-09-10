@@ -14,6 +14,7 @@ Transport_to_AI/
 ├── papers/
 │   ├── READING_LIST.md    # 30 篇精读论文清单（按周排序）
 │   └── notes/             # 每篇论文的笔记，命名如 01-attention.md
+├── python-basics/         # Python 0 基础起步：16 题（题面 EXERCISES.md + 自检 exercises.py）
 ├── karpathy/              # Karpathy "Neural Networks: Zero to Hero" 跟练
 │   └── 01-micrograd/      # 第 1 课：手写反向传播
 ├── d2l/                   # 《动手学深度学习》笔记与代码
