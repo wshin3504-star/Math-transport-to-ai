@@ -31,7 +31,7 @@
 | 15 | Prover-Verifier Games | arXiv:2109.12265 | 可验证性思想，对应现在的 R1 可读性奖励 |
 | 16 ⭐ | DeepSeek-Prover V1 | arXiv:2405.14333 | 大规模合成数据 + Lean 验证闭环；精读数据管线设计 |
 | 17 | LLEMMA / Proof-Pile-2 | arXiv:2310.10631 | 数学预训练语料怎么建，autoformalization 数据从哪来 |
-| 18 ⭐ | AlphaProof | Nature 2024 (DeepMind) | IMO 银牌系统；重点看 Lean 环境如何接入 RL |
+| 18 ⭐ | AlphaProof | Nature 2025, doi:10.1038/s41586-025-09833-y（正式版 2025.11 发表，Hubert et al.） | IMO 银牌系统；重点看 Lean 环境如何接入 RL。**PDF 未入库**：nature.com 反爬，浏览器打开 https://www.nature.com/articles/s41586-025-09833-y.pdf 手动保存为 `18-alphaproof-nature2025.pdf` |
 | 19 ⭐ | DeepSeek-Prover-V2 | arXiv:2504.21801 | 子目标分解 + 冷启动 + RL 的完整配方，当前最强开源 prover |
 | 20 | BPT: Best-first Panther Tree Search (DeepSeek) | arXiv 2502.18076（搜标题确认） | 搜索预算分配——你未来做 API 预算分配研究的直接参照 |
 
@@ -39,7 +39,7 @@
 
 | # | 论文 | 出处 | 为什么读 / 重点 |
 |---|---|---|---|
-| 21 ⭐ | AlphaGeometry | Nature 2024, DeepMind | 符号引擎+LLM 混合架构，**几何**证明——离你专业最近 |
+| 21 ⭐ | AlphaGeometry | Nature 2024, doi:10.1038/s41586-023-06747-5 | 符号引擎+LLM 混合架构，**几何**证明——离你专业最近。**PDF 未入库**：浏览器打开 https://www.nature.com/articles/s41586-023-06747-5.pdf 手动保存为 `21-alphageometry-nature2024.pdf` |
 | 22 | Lean-STaR | arXiv:2407.04051 | 思维轨迹+自举训练在证明上的应用 |
 | 23 | Lean Copilot | arXiv 2406.06913（搜标题确认） | Lean 内的 LLM 辅助证明工具链，直接可上手玩 |
 | 24 | PutnamBench | arXiv 2410.15794（搜标题确认） | Putnam 题 benchmark；将来你的 prover 就在这里刷榜 |
@@ -52,6 +52,9 @@
 
 ## 备选 / 追踪（不占 30 篇名额）
 
-- DeepSeekMath (GRPO 出处)，arXiv:2402.03300 — 读 27 之前先扫一眼
-- "Formal-STEP" 类过程监督、Lean Agent (agentic RL, arXiv 2408.06628)
+- DeepSeekMath (GRPO 出处)，arXiv:2402.03300 — 读 27 之前先扫一眼 ✅ `31-deepseekmath-2402.03300.pdf`
+- Lean Agent (agentic RL, arXiv 2408.06628) ✅ `32-lean-agent-2408.06628.pdf`
+- **AlphaProof Nexus**（arXiv:2605.22763，2026.06）：AlphaProof 团队的后续——大规模评估形式化证明搜索解决开放问题（9/353 Erdős 问题、44/492 OEIS），已部署于组合/优化/代数几何/量子光学研究 ✅ `33-alphaproof-nexus-2605.22763.pdf`
 - 持续跟踪：PutnamBench leaderboard、miniF2F 榜、AITP 会议（AI for Theorem Proving）、NeurIPS "AI for Math" workshop
+
+> **文件对照**：`papers/NN-短名-arXiv号.pdf` 与上表编号一一对应；18、21 两篇 Nature 论文需按表内链接手动下载。
