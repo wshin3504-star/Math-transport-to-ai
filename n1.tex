@@ -1,0 +1,240 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\input{beamer_preamble.tex}
+
+\title{高等数学辅导 · 第1课时}
+\subtitle{函数与数列极限}
+\author{学生：熊张羽 \quad 授课：王老师 \quad 45分钟}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\vspace{1.2cm}
+{\color{navy}\bfseries\Huge 高等数学辅导 · 第1课时}\\[1.2em]
+{\color{blacktext}\bfseries\LARGE 函数与数列极限}\\[1.6em]
+{\color{graytext}
+本课时内容：\\[0.3em]
+知识点梳理：函数的概念与性质、反函数与复合函数、初等函数；数列极限的 $\varepsilon$-$N$ 定义、收敛数列的性质、极限运算法则、常用极限结论\\
+六类常见题型与解法\\
+中档题精讲 6 道\\
+课后习题 9 道
+}
+\vspace{1.4em}
+
+{\color{graytext} 学生：熊张羽 \quad 授课教师：王老师 \quad 45分钟}
+\end{frame}
+
+\begin{frame}{一、知识点梳理（函数部分）}
+\sub{1. 函数的概念}
+设数集 $D\subset\mathbb{R}$，若对每个 $x\in D$，按法则 $f$ 有唯一确定的 $y$ 与之对应，则 $y=f(x)$ 为定义在 $D$ 上的函数。$D$ 为定义域，$f(D)$ 为值域。
+\textbf{两函数相同} $\iff$ 定义域相同且对应法则相同。
+
+\sub{2. 函数的性质}
+\begin{itemize}
+  \item \textbf{有界性}：$\exists M>0,\ \forall x\in D,\ |f(x)|\le M$。
+  \item \textbf{单调性}：$x_1<x_2\implies f(x_1)<f(x_2)$（单调增）。
+  \item \textbf{奇偶性}：$f(-x)=-f(x)$ 奇；$f(-x)=f(x)$ 偶（定义域关于原点对称）。
+  \item \textbf{周期性}：$\exists T>0,\ f(x+T)=f(x)$。
+\end{itemize}
+
+\sub{3. 反函数与复合函数}
+单调函数必有反函数，$y=f(x)$ 与 $y=f^{-1}(x)$ 图像关于 $y=x$ 对称。
+$y=f(u),\ u=\varphi(x)$ 复合为 $y=f(\varphi(x))$，$u$ 为中间变量。
+
+\sub{4. 初等函数}
+由常数与基本初等函数（幂、指、对、三角、反三角）经有限次四则与复合而成、且用一个式子表示的函数。
+\end{frame}
+
+\begin{frame}{一、知识点梳理（数列极限部分）}
+\sub{5. 数列极限的定义（$\varepsilon$-$N$ 语言）}
+设 $\{x_n\}$ 为数列，$a$ 为常数。若 $\forall\varepsilon>0,\ \exists N\in\mathbb{N}_+$，使得当 $n>N$ 时，
+\[
+|x_n-a|<\varepsilon
+\]
+恒成立，则称 $\{x_n\}$ 收敛于 $a$，记 $\displaystyle\lim_{n\to\infty}x_n=a$。
+
+\hint{理解：$\varepsilon$ 任意小刻画"无限接近"，$N$ 刻画"从某项之后"。}
+
+\sub{6. 收敛数列的性质}
+\begin{enumerate}
+  \item \textbf{唯一性}：收敛数列极限唯一。
+  \item \textbf{有界性}：收敛数列必有界（逆命题不成立）。
+  \item \textbf{保号性}：若 $a>0$，则 $\exists N$，当 $n>N$ 时 $x_n>0$。
+  \item \textbf{子数列收敛性}：收敛数列的任一子数列收敛于同一极限。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{一、知识点梳理（数列极限续）}
+\sub{7. 数列极限的运算法则}
+若 $\lim x_n=a,\ \lim y_n=b$，则
+\[
+\lim(x_n\pm y_n)=a\pm b,\quad \lim(x_n y_n)=ab,\quad \lim\frac{x_n}{y_n}=\frac ab\ (b\ne 0).
+\]
+推论：$\lim(c x_n)=c\cdot\lim x_n$，$\lim x_n^k=(\lim x_n)^k$。
+
+\sub{8. 常用数列极限结论}
+\[
+\lim_{n\to\infty}\frac1n=0,\quad \lim_{n\to\infty}q^n=0\ (|q|<1),\quad \lim_{n\to\infty}\sqrt[n]{a}=1\ (a>0),\quad \lim_{n\to\infty}\sqrt[n]{n}=1.
+\]
+
+\sub{9. 数列发散的判断}
+\begin{itemize}
+  \item 无界数列必发散。
+  \item 若存在两个子数列收敛于不同极限，则原数列发散。
+  \item 例如 $x_n=(-1)^n$：奇子列 $\to -1$，偶子列 $\to 1$，故发散。
+\end{itemize}
+
+\hint{注意：有界数列未必收敛（如 $(-1)^n$ 有界但发散），有界是收敛的必要不充分条件。}
+\end{frame}
+
+\begin{frame}{二、常见题型与解法}
+\sub{题型1 \quad 求函数定义域}
+解法：列条件（分母$\ne 0$、根号下$\ge 0$、对数真数$>0$、$\arcsin$ 定义域 $[-1,1]$ 等），解不等式组取交集。
+
+\sub{题型2 \quad 判断函数性质（奇偶、单调）}
+解法：按定义验证 $f(-x)$ 与 $f(x)$ 的关系；定义域须关于原点对称。
+
+\sub{题型3 \quad 复合函数求值与分解}
+解法：由外到内逐层代入；分解从最外层开始确定中间变量。
+
+\sub{题型4 \quad 用 $\varepsilon$-$N$ 定义证明极限}
+解法：由 $|x_n-a|<\varepsilon$ 反解 $n$ 的范围，取 $N$。常需放大不等式。
+
+\sub{题型5 \quad 利用收敛数列性质判断}
+解法：无界数列必发散；有界是收敛的必要不充分条件；找两个子列极限不同可证发散。
+
+\sub{题型6 \quad 数列极限的基本计算}
+解法：利用极限运算法则，将复杂数列拆为简单数列；$\infty/\infty$ 型分子分母同除以最高次幂。
+\end{frame}
+
+\begin{frame}{三、中档题 · 例1}
+\sub{例1} 求 $f(x)=\dfrac{\sqrt{4-x^2}}{\ln(x+1)}$ 的定义域。
+
+\blk{解：} 需同时满足：
+\begin{enumerate}
+  \item $4-x^2\ge 0 \implies -2\le x\le 2$；
+  \item $x+1>0 \implies x>-1$；
+  \item $\ln(x+1)\ne 0 \implies x\ne 0$。
+\end{enumerate}
+取交集：$(-1,0)\cup(0,2]$。
+
+\con{结论：定义域为 $(-1,0)\cup(0,2]$。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例2}
+\sub{例2} 判断 $f(x)=\ln(x+\sqrt{1+x^2})$ 的奇偶性。
+
+\blk{解：} 定义域为 $\mathbb{R}$。计算 $f(-x)$：
+\[
+f(-x)=\ln\bigl(-x+\sqrt{1+x^2}\bigr).
+\]
+有理化：
+\[
+-x+\sqrt{1+x^2}=\frac{1+x^2-x^2}{x+\sqrt{1+x^2}}=\frac{1}{x+\sqrt{1+x^2}}.
+\]
+故
+\[
+f(-x)=\ln\frac{1}{x+\sqrt{1+x^2}}=-\ln(x+\sqrt{1+x^2})=-f(x).
+\]
+
+\con{结论：$f(x)$ 为奇函数。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例3}
+\sub{例3} 设 $f(x+\dfrac1x)=x^2+\dfrac1{x^2}$，求 $f(x)$。
+
+\blk{解：} 利用配方法，将右端化为 $x+\dfrac1x$ 的表达式：
+\[
+x^2+\frac1{x^2}=\left(x+\frac1x\right)^2-2.
+\]
+令 $t=x+\dfrac1x$，则 $f(t)=t^2-2$。
+
+故
+
+\con{$f(x)=x^2-2$。}
+
+\hint{要点：观察右端与左端自变量的关系，通过配方或换元将右端表示为 $t$ 的函数。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例4}
+\sub{例4} 用 $\varepsilon$-$N$ 定义证明 $\displaystyle\lim_{n\to\infty}\frac{3n+1}{2n+1}=\frac32$。
+
+\blk{证明：} 对任意 $\varepsilon>0$，
+\[
+\left|\frac{3n+1}{2n+1}-\frac32\right|=\frac{1}{2(2n+1)}<\frac{1}{4n}.
+\]
+要使上式 $<\varepsilon$，只需 $\dfrac{1}{4n}<\varepsilon$，即 $n>\dfrac{1}{4\varepsilon}$。
+
+取 $N=\left[\dfrac{1}{4\varepsilon}\right]$，则当 $n>N$ 时，
+\[
+\left|\frac{3n+1}{2n+1}-\frac32\right|<\varepsilon.
+\]
+
+\con{由定义，$\displaystyle\lim_{n\to\infty}\frac{3n+1}{2n+1}=\frac32$。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例5}
+\sub{例5} 求 $\displaystyle\lim_{n\to\infty}\frac{3n^2-2n+1}{n^2+5}$。
+
+\blk{解：} 这是 $\dfrac{\infty}{\infty}$ 型，分子分母同除以最高次幂 $n^2$：
+\[
+\frac{3n^2-2n+1}{n^2+5}=\frac{3-\dfrac2n+\dfrac1{n^2}}{1+\dfrac5{n^2}}.
+\]
+当 $n\to\infty$ 时，$\dfrac1n\to 0,\ \dfrac1{n^2}\to 0$，由极限运算法则：
+\[
+\lim_{n\to\infty}\frac{3n^2-2n+1}{n^2+5}=\frac{3-0+0}{1+0}=3.
+\]
+
+\con{结论：原式 $=3$。}
+
+\hint{通法：多项式之比，$n\to\infty$ 时极限等于最高次项系数之比。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例6}
+\sub{例6} 判断数列 $x_n=(-1)^n\dfrac{n}{n+1}$ 是否收敛。
+
+\blk{解：} 考察奇、偶子列。
+
+偶子列（$n=2k$）：
+\[
+x_{2k}=(-1)^{2k}\frac{2k}{2k+1}=\frac{2k}{2k+1}\to 1\quad (k\to\infty).
+\]
+奇子列（$n=2k-1$）：
+\[
+x_{2k-1}=(-1)^{2k-1}\frac{2k-1}{2k}=\frac{-(2k-1)}{2k}\to -1\quad (k\to\infty).
+\]
+奇子列收敛于 $-1$，偶子列收敛于 $1$，二者不相等。
+
+\con{结论：数列 $\{x_n\}$ 发散。}
+
+\hint{方法：当数列含 $(-1)^n$ 等振荡因子时，分别考察奇、偶子列是判断发散的常用技巧。}
+\end{frame}
+
+\begin{frame}{四、课后习题（1—5）}
+\begin{enumerate}
+  \item 求 $f(x)=\dfrac{1}{x^2-1}+\sqrt{x+2}$ 的定义域。
+  \item 判断 $f(x)=\dfrac{a^x+a^{-x}}{2}$ 的奇偶性。
+  \item 设 $f(x)=2x+1,\ \varphi(x)=x^2-1$，求 $f(\varphi(x))$ 与 $\varphi(f(x))$。
+  \item 用 $\varepsilon$-$N$ 定义证明 $\displaystyle\lim_{n\to\infty}\frac{n}{n+1}=1$。
+  \item 求 $\displaystyle\lim_{n\to\infty}\frac{3n^2-2n+1}{n^2+5}$。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{四、课后习题（6—9）}
+\begin{enumerate}\setcounter{enumi}{5}
+  \item 设 $f(x)$ 的定义域为 $[0,1]$，求 $f(\sin x)$ 的定义域。
+  \item 用 $\varepsilon$-$N$ 定义证明 $\displaystyle\lim_{n\to\infty}\frac{1}{\sqrt{n}}=0$。
+  \item 求 $\displaystyle\lim_{n\to\infty}\frac{2n^2+n-3}{5n^2+2n+1}$。
+  \item 判断数列 $x_n=\dfrac{1+(-1)^n}{2}$ 是否收敛，并说明理由。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{课后任务}
+\begin{itemize}
+  \item 完成本课时课后习题 1—9。
+  \item 重点掌握：定义域求解、复合函数、$\varepsilon$-$N$ 定义证明、数列极限基本计算与发散判断。
+  \item 下节课内容：数列极限的计算（夹逼、单调有界）与函数极限的定义。
+\end{itemize}
+\end{frame}
+
+\end{document}

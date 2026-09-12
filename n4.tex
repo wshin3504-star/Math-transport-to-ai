@@ -1,0 +1,198 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\input{beamer_preamble.tex}
+
+\title{高等数学辅导 · 第4课时}
+\subtitle{极限运算法则、两个重要极限与等价无穷小}
+\author{学生：熊张羽 \quad 授课：王老师 \quad 45分钟}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\vspace{1.2cm}
+{\color{navy}\bfseries\Huge 高等数学辅导 · 第4课时}\\[1.2em]
+{\color{blacktext}\bfseries\LARGE 极限运算法则、两个重要极限与等价无穷小}\\[1.6em]
+{\color{graytext}
+本课时内容：\\[0.3em]
+知识点梳理：极限四则运算法则、复合函数极限；两个重要极限；等价无穷小替换\\
+五类常见题型与解法\\
+中档题精讲 4 道\\
+课后习题 9 道
+}
+\vspace{1.4em}
+
+{\color{graytext} 学生：熊张羽 \quad 授课教师：王老师 \quad 45分钟}
+\end{frame}
+
+\begin{frame}{一、知识点梳理}
+\sub{1. 极限四则运算法则}
+若 $\lim f=A,\ \lim g=B$，则
+\[
+\lim(f\pm g)=A\pm B,\quad \lim(fg)=AB,\quad \lim\frac fg=\frac AB\ (B\ne 0).
+\]
+推论：$\lim[cf(x)]=c\lim f(x)$，$\lim[f(x)]^n=[\lim f(x)]^n$。
+
+\sub{2. 复合函数的极限}
+若 $\lim_{x\to x_0}\varphi(x)=u_0$，且 $\lim_{u\to u_0}f(u)=A$，则
+\[
+\lim_{x\to x_0}f(\varphi(x))=A.
+\]
+即极限符号与函数符号可交换：$\lim f(\varphi(x))=f(\lim\varphi(x))$（要求 $f$ 连续）。
+
+\sub{3. 两个重要极限}
+\[
+\lim_{x\to 0}\frac{\sin x}{x}=1,
+\qquad
+\lim_{x\to\infty}\left(1+\frac1x\right)^x=e
+\quad\left(\text{或}\ \lim_{x\to 0}(1+x)^{1/x}=e\right).
+\]
+\end{frame}
+
+\begin{frame}{一、知识点梳理（续）}
+\sub{4. 无穷小的比较}
+设 $\alpha,\beta$ 为同一过程中的无穷小。
+\[
+\lim\frac\beta\alpha=
+\begin{cases}
+0, & \beta\text{ 是 }\alpha\text{ 的高阶无穷小，记 }\beta=o(\alpha),\\
+c\ne 0, & \beta\text{ 与 }\alpha\text{ 同阶无穷小},\\
+1, & \beta\text{ 与 }\alpha\text{ 等价无穷小，记 }\beta\sim\alpha,\\
+\infty, & \beta\text{ 是 }\alpha\text{ 的低阶无穷小}.
+\end{cases}
+\]
+
+\sub{5. 常用等价无穷小（$x\to 0$）}
+\[
+\sin x\sim x,\ \tan x\sim x,\ \arcsin x\sim x,\ \arctan x\sim x,
+\]
+\[
+1-\cos x\sim \frac{x^2}{2},\ e^x-1\sim x,\ \ln(1+x)\sim x,\ (1+x)^\alpha-1\sim \alpha x.
+\]
+
+\sub{6. 等价无穷小替换定理}
+若 $\alpha\sim\alpha',\ \beta\sim\beta'$，则 $\lim\dfrac{\beta f}{\alpha}=\lim\dfrac{\beta' f}{\alpha'}$。
+\hint{关键：只能替换乘除因子，不能替换加减项！}
+\end{frame}
+
+\begin{frame}{二、常见题型与解法}
+\sub{题型1 \quad $0/0$ 型极限}
+解法：因式分解约零因子 / 根式有理化 / 等价无穷小替换 / 第一个重要极限。
+
+\sub{题型2 \quad $\infty/\infty$ 型极限（$x\to\infty$）}
+解法：分子分母同除以最高次幂，利用"无穷大倒数为无穷小"。
+
+\sub{题型3 \quad $\infty-\infty$ 型极限}
+解法：能通分则通分；含根式之差则乘以共轭根式有理化。
+
+\sub{题型4 \quad $1^\infty$ 型极限}
+解法：凑成 $(1+\square)^{1/\square}$ 形式用第二个重要极限，或取对数。
+
+\sub{题型5 \quad 等价无穷小替换}
+解法：在乘除结构中，将复杂无穷小替换为简单等价无穷小。注意加减法不能直接替换。
+\end{frame}
+
+\begin{frame}{三、中档题 · 例1}
+\sub{例1} 求 $\displaystyle\lim_{x\to 0}\frac{\tan x-\sin x}{x^3}$。
+
+\blk{解：} 先恒等变形（加减法中不能直接替换 $\tan x\sim x,\ \sin x\sim x$，否则得 $0$，错误）：
+\[
+\tan x-\sin x=\sin x\left(\frac1{\cos x}-1\right)=\frac{\sin x(1-\cos x)}{\cos x}.
+\]
+当 $x\to 0$ 时 $\sin x\sim x,\ 1-\cos x\sim \dfrac{x^2}{2},\ \cos x\to 1$，故
+\[
+\lim_{x\to 0}\frac{\tan x-\sin x}{x^3}
+=\lim_{x\to 0}\frac{x\cdot \frac{x^2}{2}}{x^3\cdot \cos x}
+=\frac12.
+\]
+
+\con{结论：原式 $=\dfrac12$。}
+
+\hint{警示：等价无穷小替换只用于乘除因子，不用于加减项。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例2}
+\sub{例2} 求 $\displaystyle\lim_{x\to\infty}\left(\frac{2x-1}{2x+1}\right)^x$。
+
+\blk{解：} 这是 $1^\infty$ 型。将底数化为 $1+\square$ 的形式：
+\[
+\frac{2x-1}{2x+1}=1+\frac{-2}{2x+1}.
+\]
+利用第二个重要极限的推广 $\lim(1+u)^{1/u}=e\ (u\to 0)$：
+\[
+\left(\frac{2x-1}{2x+1}\right)^x
+=\left[\left(1+\frac{-2}{2x+1}\right)^{\frac{2x+1}{-2}}\right]^{\frac{-2x}{2x+1}}.
+\]
+方括号内 $\to e$，指数 $\dfrac{-2x}{2x+1}\to -1$，故
+\[
+\lim_{x\to\infty}\left(\frac{2x-1}{2x+1}\right)^x=e^{-1}.
+\]
+
+\con{结论：原式 $=e^{-1}$。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例3}
+\sub{例3} 求 $\displaystyle\lim_{x\to 0}\frac{\ln(1+2x)}{\sin 3x}$。
+
+\blk{解：} 当 $x\to 0$ 时，$\ln(1+2x)\sim 2x$，$\sin 3x\sim 3x$。
+
+二者均为乘除因子，可直接替换：
+\[
+\lim_{x\to 0}\frac{\ln(1+2x)}{\sin 3x}
+=\lim_{x\to 0}\frac{2x}{3x}
+=\frac23.
+\]
+
+\con{结论：原式 $=\dfrac23$。}
+
+\hint{注意：$\ln(1+2x)\sim 2x$ 是由 $\ln(1+u)\sim u$ 令 $u=2x$ 得到的；$\sin 3x\sim 3x$ 同理。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例4}
+\sub{例4} 求 $\displaystyle\lim_{x\to+\infty}\left(\sqrt{x^2+x}-\sqrt{x^2-x}\right)$。
+
+\blk{解：} 这是 $\infty-\infty$ 型，含根式之差，乘以共轭根式有理化：
+\[
+\sqrt{x^2+x}-\sqrt{x^2-x}
+=\frac{(\sqrt{x^2+x}-\sqrt{x^2-x})(\sqrt{x^2+x}+\sqrt{x^2-x})}{\sqrt{x^2+x}+\sqrt{x^2-x}}
+\]
+\[
+=\frac{(x^2+x)-(x^2-x)}{\sqrt{x^2+x}+\sqrt{x^2-x}}
+=\frac{2x}{\sqrt{x^2+x}+\sqrt{x^2-x}}.
+\]
+分子分母同除以 $x$（注意 $x>0$）：
+\[
+=\frac{2}{\sqrt{1+\frac1x}+\sqrt{1-\frac1x}}
+\to \frac{2}{1+1}=1.
+\]
+
+\con{结论：原式 $=1$。}
+\end{frame}
+
+\begin{frame}{四、课后习题（1—5）}
+\begin{enumerate}
+  \item 求 $\displaystyle\lim_{x\to 1}\frac{x^2-1}{2x^2-x-1}$。
+  \item 求 $\displaystyle\lim_{x\to 0}\frac{\sin 3x}{\sin 5x}$。
+  \item 求 $\displaystyle\lim_{x\to 0}\frac{1-\cos x}{x^2}$。
+  \item 求 $\displaystyle\lim_{x\to 0}\frac{e^{2x}-1}{\ln(1+x)}$。
+  \item 求 $\displaystyle\lim_{x\to 0}\frac{\arctan x}{x}$。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{四、课后习题（6—9）}
+\begin{enumerate}\setcounter{enumi}{5}
+  \item 求 $\displaystyle\lim_{x\to 0}(1+3x)^{2/x}$。
+  \item 求 $\displaystyle\lim_{x\to 0}\frac{\sqrt[3]{1+x^2}-1}{x^2}$。
+  \item 求 $\displaystyle\lim_{x\to+\infty}\left(\sqrt{x^2+x}-\sqrt{x^2-x}\right)$。
+  \item 求 $\displaystyle\lim_{x\to 0}\frac{\tan x-\sin x}{\sin^3 x}$。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{课后任务}
+\begin{itemize}
+  \item 完成本课时课后习题 1—9。
+  \item 重点掌握：等价无穷小替换（仅限乘除）、$1^\infty$ 型凑第二个重要极限、$\infty-\infty$ 有理化。
+  \item 下节课内容：极限计算综合与错题强化（摸底 Q13、Q14 同类题精讲）。
+\end{itemize}
+\end{frame}
+
+\end{document}

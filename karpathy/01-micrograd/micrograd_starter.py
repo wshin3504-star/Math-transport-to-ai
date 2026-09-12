@@ -344,30 +344,29 @@ def check_section6():
 # 视频 2:30:00–结尾 段落
 # ═══════════════════════════════════════════════════════════════
 
-def train():
+def train(lr=0.05, n_epochs=50, verbose=True):
+    """TODO 7.2 实验：不同 lr 的收敛对比。每个 lr 必须独立训练一轮。"""
     mlp = MLP(3, [4, 4, 1])
-    xs = [[2.0, 3.0, -1.0], [3.0, -1.0, 0.5], [0.5, 1.0, 1.0], [1.0, 1.0, -1.0]]
+    xs = [[2.0, 3.0, -1.0], [3.0, -1.0, 0.5], [0.5, 1.0, 1.0], [1.0, 1.0, -1.0, 0.7]]
     ys = [1.0, -1.0, -1.0, 1.0]
-    for epoch in range(50):
+    for epoch in range(n_epochs):
         # 1) 前向 + 损失（每轮重算！参数变了，预测就变了）
         ypred = [mlp(x) for x in xs]
         loss = sum((yout - ygt)**2 for yout, ygt in zip(ypred, ys))
         # 2) 清梯度 -> 反向传播
         mlp.zero_grad()
         loss.backward()
-        # 3) 梯度下降更新每个参数
+        # 3) 梯度下降：一个 epoch 只按一个 lr 更新一次
         for p in mlp.parameters():
-            p.data -= 0.05 * p.grad
+            p.data -= lr * p.grad
         # 4) 每 10 步打印
-        if epoch % 10 == 0:
-            print(f"epoch {epoch}, loss {loss.data:.4f}")
-
+        if verbose and epoch % 10 == 0:
+            print(f"  epoch {epoch}, loss {loss.data:.4f}")
     ypred = [mlp(x) for x in xs]
-    print("最终预测:", [round(p.data, 3) for p in ypred])
-    print("目标标签:", ys)
-
-    # TODO 7.2（选做）：把 nonlin=True/False、lr、层数改一改，观察收敛速度变化，
-    #   用 3-5 句话写进 PROGRESS.md 当天总结。
+    if verbose:
+        print("  最终预测:", [round(p.data, 3) for p in ypred])
+        print("  目标标签:", ys)
+    return loss.data
 
 
 if __name__ == "__main__":
@@ -378,4 +377,10 @@ if __name__ == "__main__":
     check_section4()
     check_section5()
     check_section6()
-    train()
+    # TODO 7.2：lr 对比实验（各自独立训练）
+    print("=== lr=0.05 基准 ===")
+    train(lr=0.05)
+    print("=== lr=0.5 过大，观察震荡 ===")
+    print(f"  50 epoch 后 loss = {train(lr=0.5, verbose=False):.4f}")
+    print("=== lr=0.01 过小，观察收敛慢 ===")
+    print(f"  50 epoch 后 loss = {train(lr=0.01, verbose=False):.4f}")

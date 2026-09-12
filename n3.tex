@@ -1,0 +1,177 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\input{beamer_preamble.tex}
+
+\title{高等数学辅导 · 第3课时}
+\subtitle{函数极限的性质与无穷小}
+\author{学生：熊张羽 \quad 授课：王老师 \quad 45分钟}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\vspace{1.2cm}
+{\color{navy}\bfseries\Huge 高等数学辅导 · 第3课时}\\[1.2em]
+{\color{blacktext}\bfseries\LARGE 函数极限的性质与无穷小}\\[1.6em]
+{\color{graytext}
+本课时内容：\\[0.3em]
+知识点梳理：函数极限的性质、海涅定理；无穷小与无穷大的定义、关系与性质\\
+四类常见题型与解法\\
+中档题精讲 4 道\\
+课后习题 9 道
+}
+\vspace{1.4em}
+
+{\color{graytext} 学生：熊张羽 \quad 授课教师：王老师 \quad 45分钟}
+\end{frame}
+
+\begin{frame}{一、知识点梳理}
+\sub{1. 函数极限的性质}
+\begin{enumerate}
+  \item \textbf{唯一性}：若极限存在则唯一。
+  \item \textbf{局部有界性}：若 $\lim_{x\to x_0}f(x)=A$，则 $f(x)$ 在 $\mathring{U}(x_0)$ 内有界。
+  \item \textbf{局部保号性}：若 $A>0$（或 $<0$），则在 $\mathring{U}(x_0)$ 内 $f(x)>0$（或 $<0$）。
+  \item \textbf{保不等式性}：若在 $\mathring{U}(x_0)$ 内 $f(x)\le g(x)$ 且二者极限存在，则 $\lim f\le \lim g$。
+\end{enumerate}
+
+\sub{2. 海涅定理（函数极限与数列极限的关系）}
+$\displaystyle\lim_{x\to x_0}f(x)=A \iff$ 对任意数列 $x_n\to x_0\ (x_n\ne x_0)$，都有 $\displaystyle\lim_{n\to\infty}f(x_n)=A$。
+
+\hint{应用：找一个趋于 $x_0$ 的数列使 $f(x_n)$ 极限不存在，或找两个数列使极限不同，即可证明函数极限不存在。}
+
+\sub{3. 无穷小与无穷大}
+\textbf{无穷小}：若 $\lim f(x)=0$，则 $f(x)$ 为该过程中的无穷小。
+\textbf{无穷大}：若 $\lim |f(x)|=+\infty$，则 $f(x)$ 为该过程中的无穷大。
+
+\sub{4. 无穷小与无穷大的关系}
+同一过程中，$f$ 为无穷大 $\implies 1/f$ 为无穷小；$f$ 为无穷小且 $f\ne 0 \implies 1/f$ 为无穷大。
+\end{frame}
+
+\begin{frame}{一、知识点梳理（续）}
+\sub{5. 无穷小与函数极限的关系}
+$\lim f(x)=A \iff f(x)=A+\alpha(x)$，其中 $\alpha(x)$ 为无穷小。
+
+\sub{6. 无穷小的性质}
+\begin{itemize}
+  \item 有限个无穷小的和仍是无穷小。
+  \item 有限个无穷小的积仍是无穷小。
+  \item \textbf{有界函数与无穷小之积仍是无穷小。}
+\end{itemize}
+
+\hint{第三条是高频考点，常用于"振荡型"极限，如 $\lim x\sin(1/x)=0$。}
+\end{frame}
+
+\begin{frame}{二、常见题型与解法}
+\sub{题型1 \quad 利用无穷小性质求极限}
+解法：识别"无穷小 $\times$ 有界量"结构，直接得 $0$。注意不能用极限乘法法则（因有界量极限未必存在）。
+
+\sub{题型2 \quad 判断无穷小与无穷大}
+解法：计算极限，为 $0$ 则无穷小，为 $\infty$ 则无穷大。
+
+\sub{题型3 \quad 利用海涅定理证明极限不存在}
+解法：构造两个趋于 $x_0$ 的数列，使 $f(x_n)$ 趋于不同值，或一个数列使极限不存在。
+
+\sub{题型4 \quad 利用无穷小与极限关系分析}
+解法：将 $f(x)$ 表示为 $A+\alpha(x)$，利用 $\alpha(x)\to 0$ 分析问题。
+\end{frame}
+
+\begin{frame}{三、中档题 · 例1}
+\sub{例1} 求 $\displaystyle\lim_{x\to 0}x\sin\frac1x$。
+
+\blk{解：} 当 $x\to 0$ 时，$x$ 是无穷小。而 $\left|\sin\dfrac1x\right|\le 1$，即 $\sin\dfrac1x$ 有界。
+
+由"有界函数与无穷小之积仍为无穷小"，得
+\[
+\lim_{x\to 0}x\sin\frac1x=0.
+\]
+
+\con{结论：原式 $=0$。}
+
+\hint{注意：此处不能用极限乘法法则，因为 $\displaystyle\lim_{x\to 0}\sin\frac1x$ 不存在（振荡），只能用无穷小性质。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例2}
+\sub{例2} 证明 $\displaystyle\lim_{x\to 0}\sin\frac1x$ 不存在。
+
+\blk{证明：} 用海涅定理。取两个趋于 $0$ 的数列：
+
+取 $x_n=\dfrac1{n\pi}$，则 $x_n\to 0\ (n\to\infty)$，且
+\[
+\sin\frac1{x_n}=\sin(n\pi)=0\to 0.
+\]
+
+取 $y_n=\dfrac1{2n\pi+\pi/2}$，则 $y_n\to 0\ (n\to\infty)$，且
+\[
+\sin\frac1{y_n}=\sin\left(2n\pi+\frac\pi2\right)=1\to 1.
+\]
+
+两个数列对应的函数值极限不同（$0\ne 1$）。
+
+\con{由海涅定理，$\displaystyle\lim_{x\to 0}\sin\frac1x$ 不存在。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例3}
+\sub{例3} 求 $\displaystyle\lim_{x\to\infty}\frac{\arctan x}{x}$。
+
+\blk{解：} 当 $x\to\infty$ 时，$\dfrac1x$ 是无穷小。
+
+而 $|\arctan x|<\dfrac{\pi}{2}$，即 $\arctan x$ 有界。
+
+由"有界函数与无穷小之积仍为无穷小"，得
+\[
+\lim_{x\to\infty}\frac{\arctan x}{x}=0.
+\]
+
+\con{结论：原式 $=0$。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例4}
+\sub{例4} 当 $x\to 0$ 时，下列函数中哪些是无穷小？哪些是无穷大？
+$f_1(x)=x^2,\ f_2(x)=\dfrac1x,\ f_3(x)=\sin x,\ f_4(x)=\dfrac{1}{x^2}$。
+
+\blk{解：} 计算各极限：
+\[
+\lim_{x\to 0}f_1(x)=\lim_{x\to 0}x^2=0,
+\]
+\[
+\lim_{x\to 0}f_2(x)=\lim_{x\to 0}\frac1x=\infty,
+\]
+\[
+\lim_{x\to 0}f_3(x)=\lim_{x\to 0}\sin x=0,
+\]
+\[
+\lim_{x\to 0}f_4(x)=\lim_{x\to 0}\frac1{x^2}=+\infty.
+\]
+
+\con{结论：$f_1(x),\ f_3(x)$ 是无穷小；$f_2(x),\ f_4(x)$ 是无穷大。}
+
+\hint{注意：无穷小和无穷大都是相对于某个极限过程而言的，必须指明过程。}
+\end{frame}
+
+\begin{frame}{四、课后习题（1—5）}
+\begin{enumerate}
+  \item 求 $\displaystyle\lim_{x\to 0}x^2\cos\frac1{x^2}$。
+  \item 求 $\displaystyle\lim_{x\to\infty}\frac{\sin x}{x}$。
+  \item 证明 $\displaystyle\lim_{x\to 0}\cos\frac1x$ 不存在。
+  \item 当 $x\to 0$ 时，判断 $f(x)=\dfrac{x+1}{x}$ 是无穷小还是无穷大。
+  \item 求 $\displaystyle\lim_{x\to 0}x^2\sin\frac1x$。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{四、课后习题（6—9）}
+\begin{enumerate}\setcounter{enumi}{5}
+  \item 证明：若 $\displaystyle\lim_{x\to x_0}f(x)=A$，则 $f(x)$ 在 $\mathring{U}(x_0)$ 内有界。
+  \item 设 $\displaystyle\lim_{x\to x_0}f(x)=A>0$，证明存在 $\mathring{U}(x_0)$ 使 $f(x)>0$。
+  \item 求 $\displaystyle\lim_{x\to\infty}\frac{1}{x}\arctan x$。
+  \item 当 $x\to\infty$ 时，判断 $f(x)=\dfrac{x^2+1}{x^3}$ 是无穷小还是无穷大。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{课后任务}
+\begin{itemize}
+  \item 完成本课时课后习题 1—9。
+  \item 重点掌握：无穷小 $\times$ 有界量 $=0$、海涅定理证极限不存在。
+  \item 下节课内容：极限运算法则、两个重要极限、等价无穷小。
+\end{itemize}
+\end{frame}
+
+\end{document}

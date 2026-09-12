@@ -1,0 +1,35 @@
+% ===== 高等数学辅导课件 通用样式 =====
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fontspec}
+\setCJKmainfont{Microsoft YaHei}
+\setCJKsansfont{Microsoft YaHei}
+\setmainfont{Microsoft YaHei}
+\setsansfont{Microsoft YaHei}
+
+% 颜色
+\definecolor{navy}{RGB}{31,59,99}
+\definecolor{blacktext}{RGB}{26,26,26}
+\definecolor{redtext}{RGB}{192,0,0}
+\definecolor{graytext}{RGB}{89,89,89}
+
+% 去除所有模板装饰，纯白底纯内容
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{frametitle}[default][left]
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=blacktext}
+\setbeamercolor{frametitle}{fg=navy}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamersize{text margin left=1.3cm, text margin right=1.3cm}
+
+% 段落与行距
+\linespread{1.25}
+\setlength{\parskip}{0.4em}
+
+% 自定义命令
+\newcommand{\sub}[1]{{\color{navy}\bfseries #1}}
+\newcommand{\con}[1]{{\color{redtext}\bfseries #1}}
+\newcommand{\hint}[1]{{\color{graytext}\small #1}}
+\newcommand{\blk}[1]{{\color{blacktext} #1}}

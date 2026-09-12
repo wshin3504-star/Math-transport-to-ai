@@ -1,0 +1,191 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\input{beamer_preamble.tex}
+
+\title{高等数学辅导 · 第2课时}
+\subtitle{数列极限计算与函数极限定义}
+\author{学生：熊张羽 \quad 授课：王老师 \quad 45分钟}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\vspace{1.2cm}
+{\color{navy}\bfseries\Huge 高等数学辅导 · 第2课时}\\[1.2em]
+{\color{blacktext}\bfseries\LARGE 数列极限计算与函数极限定义}\\[1.6em]
+{\color{graytext}
+本课时内容：\\[0.3em]
+知识点梳理：数列极限运算法则、夹逼准则、单调有界准则；函数极限的 $\varepsilon$-$\delta$ 定义、单侧极限\\
+五类常见题型与解法\\
+中档题精讲 4 道\\
+课后习题 9 道
+}
+\vspace{1.4em}
+
+{\color{graytext} 学生：熊张羽 \quad 授课教师：王老师 \quad 45分钟}
+\end{frame}
+
+\begin{frame}{一、知识点梳理（数列极限计算）}
+\sub{1. 数列极限的运算法则}
+若 $\lim x_n=a,\ \lim y_n=b$，则
+\[
+\lim(x_n\pm y_n)=a\pm b,\quad \lim(x_n y_n)=ab,\quad \lim\frac{x_n}{y_n}=\frac ab\ (b\ne 0).
+\]
+
+\sub{2. 夹逼准则}
+若 $y_n\le x_n\le z_n$ 且 $\lim y_n=\lim z_n=a$，则 $\lim x_n=a$。
+
+\sub{3. 单调有界准则}
+单调有界数列必收敛。常用于递归数列 $x_{n+1}=f(x_n)$。
+
+\sub{4. 常用结论}
+\[
+\lim_{n\to\infty}\frac1n=0,\quad \lim_{n\to\infty}q^n=0\ (|q|<1),\quad \lim_{n\to\infty}\sqrt[n]{a}=1\ (a>0),\quad \lim_{n\to\infty}\sqrt[n]{n}=1.
+\]
+\end{frame}
+
+\begin{frame}{一、知识点梳理（函数极限定义）}
+\sub{5. 函数在有限点处的极限（$\varepsilon$-$\delta$ 定义）}
+设 $f(x)$ 在 $\mathring{U}(x_0)$ 内有定义。若 $\forall\varepsilon>0,\ \exists\delta>0$，使得当 $0<|x-x_0|<\delta$ 时，
+\[
+|f(x)-A|<\varepsilon
+\]
+恒成立，则 $\displaystyle\lim_{x\to x_0}f(x)=A$。
+
+\hint{注意：$0<|x-x_0|$ 表示 $x\ne x_0$，极限与 $f(x_0)$ 是否存在、取何值无关。}
+
+\sub{6. 单侧极限}
+左极限 $\displaystyle\lim_{x\to x_0^-}f(x)$，右极限 $\displaystyle\lim_{x\to x_0^+}f(x)$。
+\[
+\lim_{x\to x_0}f(x)=A \iff \lim_{x\to x_0^-}f(x)=\lim_{x\to x_0^+}f(x)=A.
+\]
+
+\sub{7. 自变量趋于无穷时的极限}
+$\displaystyle\lim_{x\to\infty}f(x)=A \iff \forall\varepsilon>0,\ \exists X>0,\ |x|>X\implies |f(x)-A|<\varepsilon$。
+$\displaystyle\lim_{x\to\infty}f(x)=A \iff \lim_{x\to+\infty}f(x)=\lim_{x\to-\infty}f(x)=A$。
+\end{frame}
+
+\begin{frame}{二、常见题型与解法}
+\sub{题型1 \quad 数列极限计算（$\infty/\infty$ 型）}
+解法：分子分母同除以最高次幂，利用 $\lim 1/n=0$。
+
+\sub{题型2 \quad 夹逼准则求极限}
+解法：对数列放缩，构造两个极限相同的数列夹住原数列。
+
+\sub{题型3 \quad 单调有界准则求递归数列极限}
+解法：①证有界（归纳法）；②证单调（作差或作商）；③设极限 $a$，递推式取极限解方程。
+
+\sub{题型4 \quad 用 $\varepsilon$-$\delta$ 定义证明函数极限}
+解法：由 $|f(x)-A|<\varepsilon$ 反解 $|x-x_0|$ 的范围取 $\delta$，常需先限制 $|x-x_0|$。
+
+\sub{题型5 \quad 分段函数分段点极限}
+解法：分别求左、右极限，相等则极限存在。
+\end{frame}
+
+\begin{frame}{三、中档题 · 例1}
+\sub{例1} 求 $\displaystyle\lim_{n\to\infty}\left(\frac1{\sqrt{n^2+1}}+\frac1{\sqrt{n^2+2}}+\cdots+\frac1{\sqrt{n^2+n}}\right)$。
+
+\blk{解：} 共 $n$ 项，每项满足
+\[
+\frac1{\sqrt{n^2+n}}\le \frac1{\sqrt{n^2+k}}\le \frac1{\sqrt{n^2+1}}\quad (k=1,2,\dots,n).
+\]
+求和得
+\[
+\frac{n}{\sqrt{n^2+n}}\le \sum_{k=1}^n\frac1{\sqrt{n^2+k}}\le \frac{n}{\sqrt{n^2+1}}.
+\]
+两端极限均为：
+\[
+\lim_{n\to\infty}\frac{n}{\sqrt{n^2+n}}=\lim_{n\to\infty}\frac{1}{\sqrt{1+\frac1n}}=1,
+\quad
+\lim_{n\to\infty}\frac{n}{\sqrt{n^2+1}}=1.
+\]
+由夹逼准则，
+
+\con{原式 $=1$。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例2}
+\sub{例2} 设 $x_1>0,\ x_{n+1}=\dfrac12\left(x_n+\dfrac{2}{x_n}\right)$，证明 $\{x_n\}$ 收敛并求极限。
+
+\blk{解：}
+\emph{①有界性。} 由均值不等式，
+\[
+x_{n+1}=\frac12\left(x_n+\frac{2}{x_n}\right)\ge \sqrt{x_n\cdot\frac{2}{x_n}}=\sqrt2,
+\]
+故 $x_n\ge\sqrt2\ (n\ge 2)$。
+
+\emph{②单调性。} 当 $n\ge 2$ 时，$x_n\ge\sqrt2$，
+\[
+x_{n+1}-x_n=\frac12\left(x_n+\frac{2}{x_n}\right)-x_n=\frac12\left(\frac{2}{x_n}-x_n\right)=\frac{2-x_n^2}{2x_n}\le 0,
+\]
+故 $\{x_n\}$ 单调递减。
+
+\emph{③求极限。} 由单调有界准则收敛。设 $\lim x_n=L$，取极限：
+\[
+L=\frac12\left(L+\frac{2}{L}\right)\implies 2L^2=L^2+2\implies L^2=2.
+\]
+由 $x_n\ge\sqrt2>0$，舍去负根。
+
+\con{结论：$\displaystyle\lim_{n\to\infty}x_n=\sqrt2$。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例3}
+\sub{例3} 用 $\varepsilon$-$\delta$ 定义证明 $\displaystyle\lim_{x\to 2}(3x-1)=5$。
+
+\blk{证明：} 对任意 $\varepsilon>0$，
+\[
+|(3x-1)-5|=|3x-6|=3|x-2|.
+\]
+要使 $|(3x-1)-5|<\varepsilon$，只需 $3|x-2|<\varepsilon$，即 $|x-2|<\dfrac{\varepsilon}{3}$。
+
+取 $\delta=\dfrac{\varepsilon}{3}$，则当 $0<|x-2|<\delta$ 时，恒有
+\[
+|(3x-1)-5|=3|x-2|<\varepsilon.
+\]
+
+\con{由定义，$\displaystyle\lim_{x\to 2}(3x-1)=5$。}
+\end{frame}
+
+\begin{frame}{三、中档题 · 例4}
+\sub{例4} 设 $f(x)=\begin{cases}x+1, & x<0,\\ 0, & x=0,\\ x-1, & x>0,\end{cases}$ 讨论 $\displaystyle\lim_{x\to 0}f(x)$ 是否存在。
+
+\blk{解：} 分别求左右极限。
+
+左极限：$\displaystyle\lim_{x\to 0^-}f(x)=\lim_{x\to 0^-}(x+1)=1$。
+
+右极限：$\displaystyle\lim_{x\to 0^+}f(x)=\lim_{x\to 0^+}(x-1)=-1$。
+
+因为 $\displaystyle\lim_{x\to 0^-}f(x)=1\ne -1=\lim_{x\to 0^+}f(x)$，左右极限不相等。
+
+\con{结论：$\displaystyle\lim_{x\to 0}f(x)$ 不存在。}
+
+\hint{分段点处必须分别考察左右极限，这是高频考点。}
+\end{frame}
+
+\begin{frame}{四、课后习题（1—5）}
+\begin{enumerate}
+  \item 求 $\displaystyle\lim_{n\to\infty}\frac{1+2+\cdots+n}{n^2}$。
+  \item 用夹逼准则求 $\displaystyle\lim_{n\to\infty}\left(\frac1{n^2+1}+\frac1{n^2+2}+\cdots+\frac1{n^2+n}\right)$。
+  \item 用 $\varepsilon$-$\delta$ 定义证明 $\displaystyle\lim_{x\to 1}(2x+3)=5$。
+  \item 设 $f(x)=\begin{cases}x^2, & x\le 1,\\ 2x, & x>1,\end{cases}$ 求 $\displaystyle\lim_{x\to 1}f(x)$。
+  \item 求 $\displaystyle\lim_{n\to\infty}\sqrt{n}(\sqrt{n+1}-\sqrt{n})$。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{四、课后习题（6—9）}
+\begin{enumerate}\setcounter{enumi}{5}
+  \item 设 $x_1=1,\ x_{n+1}=1+\dfrac{x_n}{1+x_n}$，证明 $\{x_n\}$ 收敛并求极限。
+  \item 设 $f(x)=\dfrac{|x|}{x}$，求左右极限并判断 $\displaystyle\lim_{x\to 0}f(x)$ 是否存在。
+  \item 求 $\displaystyle\lim_{n\to\infty}\left(1+\frac12+\frac14+\cdots+\frac1{2^n}\right)$。
+  \item 设 $f(x)=\begin{cases}e^x, & x<0,\\ a+x, & x\ge 0,\end{cases}$ 问 $a$ 取何值时 $\displaystyle\lim_{x\to 0}f(x)$ 存在？
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{课后任务}
+\begin{itemize}
+  \item 完成本课时课后习题 1—9。
+  \item 重点掌握：夹逼准则的放缩技巧、递归数列三步法、分段点左右极限。
+  \item 下节课内容：函数极限的性质、无穷小与无穷大。
+\end{itemize}
+\end{frame}
+
+\end{document}
